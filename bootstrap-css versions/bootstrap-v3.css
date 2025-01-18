@@ -1,0 +1,150 @@
+:root {
+    --primary: #121212;
+    --secondary: #1e1e1e;
+    --primary-accent: #e0e0e0;
+    --secondary-accent: #999999;
+    --accent-purple: #6200ea;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--primary-accent);
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 5vmin;
+    padding: 5vmin;
+    max-width: 800px;
+    max-height: 80vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    background-color: var(--secondary);
+}
+
+h1.title {
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--primary-accent);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.card-images {
+    display: flex;
+    gap: 10px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"] {
+    background-color: #333;
+    color: var(--primary-accent);
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 8px var(--accent-purple);
+}
+
+button, input[type="button"] {
+    background-color: var(--accent-purple);
+    color: var(--primary-accent);
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover, input[type="button"]:hover {
+    background-color: #3700b3;
+}
+
+button:focus, input[type="button"]:focus {
+    outline: none;
+    box-shadow: 0 0 8px var(--accent-purple);
+}
+
+form.well {
+    background-color: var(--secondary);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+#curcount {
+    font-size: 30px;
+    color: var(--primary-accent);
+    font-weight: bold;
+    text-align: center;
+    display: none;
+    margin-top: 20px;
+}
+
+#info {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+input[type="button"]:disabled {
+    cursor: not-allowed;
+    background-color: #999;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 4vmin;
+        gap: 20px;
+    }
+
+    h1.title {
+        font-size: 32px;
+    }
+
+    input[type="text"], button, input[type="button"] {
+        font-size: 14px;
+    }
+}

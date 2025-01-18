@@ -1,0 +1,22 @@
+{
+    "name": "Card Counter",
+    "short_name": "Hydrovolter",
+    "description": "An app to train card counting for blackjack",
+    "icons": [
+      {
+        "src": "/CardCounterIcon.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/CardCounterIcon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "theme_color": "#3367D6",
+    "background_color": "#232323"
+  }
