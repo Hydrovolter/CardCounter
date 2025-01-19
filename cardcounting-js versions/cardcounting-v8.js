@@ -26,16 +26,34 @@ var count_map = {
   'a': -1
 };
 
-var getNextCard = function() {
-  var rand_suit1 = SUITS[Math.floor(Math.random() * SUITS.length)];
-  var rand_card1 = CARDS[Math.floor(Math.random() * CARDS.length)];
-  var rand_suit2 = SUITS[Math.floor(Math.random() * SUITS.length)];
-  var rand_card2 = CARDS[Math.floor(Math.random() * CARDS.length)];
-  count += count_map[rand_card1] + count_map[rand_card2];
-  $('#curcount').html(count);
-  $('#curcard1').attr('src', "img/" + rand_suit1 + "-" + rand_card1 + "-150.png");
-  $('#curcard2').attr('src', "img/" + rand_suit2 + "-" + rand_card2 + "-150.png");
-};
+var getNextCard = function () {
+    var rand_suit1 = SUITS[Math.floor(Math.random() * SUITS.length)];
+    var rand_card1 = CARDS[Math.floor(Math.random() * CARDS.length)];
+    var rand_suit2 = SUITS[Math.floor(Math.random() * SUITS.length)];
+    var rand_card2 = CARDS[Math.floor(Math.random() * CARDS.length)];
+    
+    count += count_map[rand_card1] + count_map[rand_card2];
+    $('#curcount').html(count);
+  
+    // Update the back face of each card with the new card
+    $('#curcard1 .back img').attr('src', "img/" + rand_suit1 + "-" + rand_card1 + "-150.png");
+    $('#curcard2 .back img').attr('src', "img/" + rand_suit2 + "-" + rand_card2 + "-150.png");
+  
+    // Add the flip class to trigger the animation
+    $('#curcard1, #curcard2').addClass('flip');
+  
+    // After the flip, update the front face with the new card
+    setTimeout(() => {
+      $('#curcard1 .front img').attr('src', "img/" + rand_suit1 + "-" + rand_card1 + "-150.png");
+      $('#curcard2 .front img').attr('src', "img/" + rand_suit2 + "-" + rand_card2 + "-150.png");
+  
+      // Remove the flip class to reset the animation
+      $('#curcard1, #curcard2').removeClass('flip');
+    }, 500); // Match the duration of the flip animation
+  };
+  
+  
+  
 
 var cur_turn = 0;
 var start = function() {

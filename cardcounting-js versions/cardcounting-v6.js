@@ -62,13 +62,9 @@ var start = function() {
 
 $(document).ready(function() {
   $('#curcount').hide();
-
-  $('#curcard1').attr('src', "img/facedown-150.jpg");
-  $('#curcard2').attr('src', "img/facedown-150.jpg");
-
+  getNextCard();
   count = 0;
   cur_turn = 0;
-
   $('#cardcountingform').submit(function(event) {
     event.preventDefault();
 
